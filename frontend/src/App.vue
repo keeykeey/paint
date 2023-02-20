@@ -15,6 +15,7 @@
     <Radio tag=出力形式
       :radioTitle = "radioTitle"
       :defaultVal = "defaultRadioVal"
+      :keys = "keyVals"
       :vals = "radioVals"
       :labels = "radioLabels"
     ></Radio>
@@ -46,6 +47,7 @@ export default {
       tag: "画像出力形式",
       radioTitle: "出力形式",
       defaultRadioVal: "0",
+      keyVals: ["0", "1", "2"],
       radioVals: ["0", "1", "2"],
       radioLabels: ["png", "jpg", "svg"],
     }

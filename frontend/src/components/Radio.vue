@@ -1,12 +1,11 @@
 <template>
   <div>
-    <label> {{radioTitle}} </label>
-    <input type="radio" value="0" v-model="defaultRadioVal"/>
-    <label>png </label>
-    <input type="radio" value="1" v-model="defaultRadioVal"/>
-    <label>jpeg </label>
-    <input type="radio" value="2" v-model="defaultRadioVal"/>
-    <label>svg </label>
+    <label> {{ radioTitle }} </label>
+    <span v-for="key in keys" :key="key">
+      <input type="radio" :value="vals[key]" :key="key"/>
+      <label> {{ labels[key] }} </label>
+    </span>
+
   </div>
 </template>
 
@@ -16,6 +15,7 @@ export default {
   props: {
     radioTitle: String,
     defaultVal: String,
+    keys: [],
     vals: [],
     labels: [],
   },
