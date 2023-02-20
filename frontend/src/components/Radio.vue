@@ -3,7 +3,7 @@
     <label> {{ radioTitle }} </label>
     <span v-for="key in keys" :key="key">
       <input type="radio" :value="vals[key]" :key="key"/>
-      <label > {{ labels[key] }} </label>
+      <label> {{ labels[key] }} </label>
     </span>
 
   </div>
