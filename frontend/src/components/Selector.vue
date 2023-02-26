@@ -16,7 +16,7 @@ export default {
     name: "A_Selecter",
     props: {
         defaultVal             : String,
-        selectEl               : Function,
+        selectVal              : Function,
         optionList             : Array,
     }, 
     data: function(){
@@ -27,7 +27,7 @@ export default {
     },
     methods: {
         select(){
-            this.selectEl(this.selected)
+            this.selectVal(this.selected)
         }
 
     }
