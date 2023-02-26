@@ -2,7 +2,7 @@
   <div>
     <label> {{ radioTitle }} </label>
     <span v-for="key in keys" :key="key">
-      <input type="radio" :value="vals[key]" :key="key" v-model="defaultRadioVal"/>
+      <input type="radio" :value="vals[key]" :key="key" v-model="selectedVal"/>
       <label> {{ labels[key] }} </label>
     </span>
 
@@ -14,20 +14,20 @@ export default {
   name: "A_Radio",
   props: {
     radioTitle: String,
-    defaultVal: String,
+    radioVal: String,
+    setVal: Function, 
     keys: [],
     vals: [],
     labels: [],
   },
   data: function() {
     return{
-      defaultRadioVal: this.defaultVal,
+      selectedVal: this.radioVal,
     }
   },
   watch: {
-    defaultRadioVal: function(val) {
-      // TODO //
-      console.log("watch",val)
+    selectedVal: function(val) {
+      this.setVal(val)
     }
   }
 }
