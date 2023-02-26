@@ -10,19 +10,24 @@
             @mouseup   = "changeMode"
          ></canvas>
     </div>
-    <Radio tag=出力形式
-      :radioTitle = "radioTitle"
-      :radioVal = "imageFormatKey"
-      :setVal = "setImageFormat"
-      :keys = "keyVals"
-      :vals = "radioVals"
-      :labels = "radioLabels"
-    ></Radio>
-    <Button tag = 画像出力ボタン
-      :btnLabel = "buttonLabel"
-      :pushBtn = "outputPicture"
-    >
-    </Button>
+    <span id="outputImg">
+        <span id="radioSpace">
+            <Radio tag=出力形式
+            :radioTitle = "radioTitle"
+            :radioVal = "imageFormatKey"
+            :setVal = "setImageFormat"
+            :keys = "keyVals"
+            :vals = "radioVals"
+            :labels = "radioLabels"
+            />
+        </span>
+        <span id="btnSpace">
+            <Button tag = 画像出力ボタン
+            :btnLabel = "buttonLabel"
+            :pushBtn = "outputPicture"
+            /> 
+        </span>
+    </span>
   </div>
 </template>
 
@@ -49,9 +54,9 @@ export default {
             // Radio -> image format
             radioTitle: "出力形式",
             imageFormatKey: DEFAULT_IMG_FMT_KEY,
-            keyVals: ["0", "1", "2"],
-            radioVals: ["0", "1", "2"],
-            radioLabels: ["png", "jpg", "svg"],
+            keyVals: ["0", "1"],
+            radioVals: ["0", "1"],
+            radioLabels: ["png", "jpg"],
 
             // Button -> to output picture
             buttonLabel: "画像出力",
@@ -118,7 +123,19 @@ export default {
 </script>
 
 <style scoped>
-canvas{
-    border:solid 1px;
+canvas {
+    border: solid 1px;
+}
+
+#outputImg {
+    display: flex;
+}
+
+#radioSpace {
+    margin: 3px;
+}
+
+#btnSpace {
+    margin: 3px 3px 3px 12px; 
 }
 </style>
