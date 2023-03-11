@@ -2,29 +2,29 @@
   <div class="comp">
     <div>
         <canvas 
-            width = "600"
-            height = "600"
+            :width = "canvasHeight"
+            :height = "canvasWidth"
             class="canvas" ref="canvas"
             @mousemove = "draw"
             @mousedown = "changeMode"
             @mouseup   = "changeMode"
-         ></canvas>
+        ></canvas>
     </div>
     <span id="outputImg">
         <span id="radioSpace">
             <Radio tag=出力形式
-            :radioTitle = "radioTitle"
-            :radioVal = "imageFormatKey"
-            :setVal = "setImageFormat"
-            :keys = "keyVals"
-            :vals = "radioVals"
-            :labels = "radioLabels"
+                :radioTitle = "radioTitle"
+                :radioVal = "imageFormatKey"
+                :setVal = "setImageFormat"
+                :keys = "keyVals"
+                :vals = "radioVals"
+                :labels = "radioLabels"
             />
         </span>
         <span id="btnSpace">
             <Button tag = 画像出力ボタン
-            :btnLabel = "buttonLabel"
-            :pushBtn = "outputPicture"
+                :btnLabel = "buttonLabel"
+                :pushBtn = "outputPicture"
             /> 
         </span>
     </span>
@@ -44,8 +44,10 @@ export default {
         Button,
     },
     props: {
-        color     : String,
-        fontSize  : String,
+        color        : String,
+        fontSize     : String,
+        canvasWidth  : String,
+        canvasHeight : String,
     },
     data: function(){
         return {
