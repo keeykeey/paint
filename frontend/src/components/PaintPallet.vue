@@ -2,9 +2,9 @@
   <div class="comp">
     <div>
         <canvas 
-            :width = "canvasHeight"
-            :height = "canvasWidth"
-            class="canvas" ref="canvas"
+            :width = "canvasWidth"
+            :height = "canvasHeight"
+            ref="canvas"
             @mousemove = "draw"
             @mousedown = "changeMode"
             @mouseup   = "changeMode"
